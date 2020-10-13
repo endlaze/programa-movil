@@ -15,16 +15,11 @@ export default class Middleware {
   }
 
   private static corsConfig = (app: Application) => {
-    const corsOptions = {
-      origin: process.env.WEB_URL
-    };
 
-    app.use(cors(corsOptions));
+    app.use(cors());
 
     app.use((req: Request, res: Response, next: NextFunction) => {
-
-      const apiURL: string = process.env.API_URL || '*';
-      res.setHeader('Access-Control-Allow-Origin', apiURL);
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
       res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
       res.setHeader('Access-Control-Allow-Credentials', 'true');
