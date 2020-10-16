@@ -1,4 +1,4 @@
-import { Application, Router } from 'express';
+import { Router } from 'express';
 import cors from 'cors';
 import TaskController from '../controllers/task-controller';
 
@@ -13,7 +13,7 @@ class TaskRouter {
     this.router.get('/read', cors(), TaskController.readTasks);
     this.router.post('/update', cors(), TaskController.updateTask);
     this.router.post('/delete', cors(), TaskController.deleteTask);
-  }
-}
+  };
+};
 
-export default new TaskRouter().router
+export default new TaskRouter().router;

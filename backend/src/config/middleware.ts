@@ -7,12 +7,12 @@ export default class Middleware {
   static init(app: Application) {
     this.bodyParserConfig(app);
     this.corsConfig(app);
-  }
+  };
 
   private static bodyParserConfig = (app: Application) => {
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-  }
+  };
 
   private static corsConfig = (app: Application) => {
 
@@ -25,5 +25,5 @@ export default class Middleware {
       res.setHeader('Access-Control-Allow-Credentials', 'true');
       next();
     });
-  }
-}
+  };
+};

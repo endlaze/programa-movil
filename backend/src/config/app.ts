@@ -1,6 +1,6 @@
 import express from 'express';
 import Middleware from './middleware';
-import Router from '../routers/router'
+import Router from '../routers/router';
 
 class App {
   app: express.Application;
@@ -9,7 +9,7 @@ class App {
     this.app = express();
     Middleware.init(this.app);
     Router.init(this.app);
-  }
-}
+  };
+};
 
-export default new App().app
+export default new App().app;
