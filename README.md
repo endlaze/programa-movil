@@ -1,1 +1,1 @@
-# programa movil para el curso de proyecto
+# Programa móvil para el curso de proyecto
